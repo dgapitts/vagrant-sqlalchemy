@@ -60,3 +60,33 @@ you're using.
 [~/projects/vagrant-sqlalchemy] # vagrant ssh ab98c57
 VM must be created before running this command. Run `vagrant up` first.
 ```
+
+However after rebuilding the project (i.e. after installing vagrant-vbguest and vagrant-scp)
+
+```
+[~/projects/vagrant-sqlalchemy] # vagrant global-status
+id       name    provider   state    directory                                         
+---------------------------------------------------------------------------------------
+56b4b79  default virtualbox poweroff /home/dpitts/projects/vagrant-ansible-for-devops  
+1838b0f  db1     virtualbox poweroff /home/dpitts/projects/vagrant-ansible-slony       
+64ff76c  db2     virtualbox poweroff /home/dpitts/projects/vagrant-ansible-slony       
+4d9e81a  default virtualbox poweroff /home/dpitts/projects/vagrant-puppet              
+e563320  default virtualbox running  /home/dpitts/projects/vagrant-postgres12          
+19fa8be  default virtualbox poweroff /home/dpitts/projects/vagrant-centos7-npm         
+f6be43c  default virtualbox running  /home/dpitts/projects/vagrant-centos7-statsd      
+2feb40b  default virtualbox poweroff /home/dpitts/projects/vagrant-centos7-cockroachdb 
+9629d5e  default virtualbox running  /home/dpitts/projects/vagrant-sqlalchemy          
+ 
+The above shows information about all known Vagrant environments
+on this machine. This data is cached and may not be completely
+up-to-date. To interact with any of the machines, you can go to
+that directory and run Vagrant, or you can use the ID directly
+with Vagrant commands from any directory. For example:
+"vagrant destroy 1a2b3c4d"
+```
+the vagrant-scp worked
+```
+[~/projects/vagrant-sqlalchemy] #  vagrant scp 9629d5e:/home/vagrant/pg_bench_schema_only.sql .
+Warning: Permanently added '[127.0.0.1]:2222' (ECDSA) to the list of known hosts.
+pg_bench_schema_only.sql                                           100% 2341     2.3KB/s   00:00   
+```
