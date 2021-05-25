@@ -88,6 +88,8 @@ then
   yum -y install epel-release
   yum -y install ShellCheck
 
+  # add sqlalchemy module
+  pip3 install sqlalchemy
 else
   echo "already installed flag set : /home/vagrant/already-installed-flag"
 fi
