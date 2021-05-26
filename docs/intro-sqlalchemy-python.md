@@ -14,7 +14,7 @@ As a quick fix
 * In the create_engine connection string changed `localohst` to `127.0.0.1`
 
 i.e.
-````
+```
 [root@c7pyth4db vagrant]# cat sqlalchemy-intro-python.py
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import create_engine
@@ -51,8 +51,6 @@ CREATE TABLE customers (
 	email VARCHAR, 
 	PRIMARY KEY (id)
 )
-
-
 2021-05-26 20:07:44,470 INFO sqlalchemy.engine.Engine [no key 0.00028s] {}
 2021-05-26 20:07:44,550 INFO sqlalchemy.engine.Engine COMMIT
 ```
