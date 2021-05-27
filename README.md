@@ -10,11 +10,7 @@ https://www.sqlalchemy.org/
 
 I'm going working with a few DB engines:  postgres, sqlite, cockroachdb and mysql.
 
-## Vagrant scp
-
-As per [docs/vagrant-scp.md](docs/vagrant-scp.md) I've made some notes on setting up scp with vagrant, as the initial datasets are created in pgbench/postgres, then dumped to flat files and tweaked for the other db engines. 
-
-The tweaking will be largely scriptted plus a few quicklu manual edits, I'm using vagrant-scp to save these datasets.   
+ 
 
 
 ## General data generation and first steps with sqlite3 (initially without sqlalchemy)
@@ -30,3 +26,17 @@ As per [docs/intro-sqlalchemy.md](docs/intro-sqlalchemy.md):
 
 As per [docs/intro-sqlalchemy-python.md](docs/intro-sqlalchemy-python.md)
 * I can also use the ORM in the same manner in postgres
+
+
+## Background vagrant issues and tweaks
+
+### Vagrant scp
+
+* As per [docs/vagrant-scp.md](docs/vagrant-scp.md) I've made some notes on setting up scp with vagrant, as the initial datasets are created in pgbench/postgres, then dumped to flat files and tweaked for the other db engines. 
+* These tweaks will be largely scripted plus a few final quick manual edits.
+* I'm planning to use vagrant-scp to save these datasets i.e. back to the project.
+
+### Vagrant mount failures and my workaround - vagrant reload && sudo /vagrant/post-provision.sh
+
+* I'm not sure why recently I'm hitting /vagrant mount issues around initial provisioning? 
+* However it appears that I'm alone and I have made some notes regarding workarounds [docs/vagrant-mount-issues.md](docs/vagrant-mount-issues.md).
