@@ -80,6 +80,9 @@ then
   chmod 777 -R /pg-ora-demo-scripts
   ls -rl /pg-ora-demo-scripts
   
+  # install mysql
+  yum -y install mysql-community-server
+  
   # initial cron
   crontab /vagrant/root_cronjob_monitoring_sysstat_plus_custom_pgmon.txt
 
